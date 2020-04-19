@@ -6,15 +6,8 @@ void ft_putchar(char c);
 
 void ft_is_negative(int n)
 {
-    if (n < 0)
+	if (n < 0)
 		ft_putchar(78);
-    else
+	else
 		ft_putchar(80);
-}
-
-int main()
-{
-    int n;
-	ft_is_negative(n);
-	return 0;
 }
