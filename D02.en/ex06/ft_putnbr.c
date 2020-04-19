@@ -34,9 +34,3 @@ void ft_putnbr(int nb)
 		ft_putchar(digit);
 	}
 }
-
-int main ()
-{
-	ft_putnbr(-2147483648);
-	return 0;
-}
