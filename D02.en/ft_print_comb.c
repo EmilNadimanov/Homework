@@ -20,17 +20,24 @@ void ft_print_comb(void)
 			{
 				if (d1 != d2 && d1 != d3 && d2 != d3)
 					{
-						ft_putchar(d1);
-						ft_putchar(d2);
-						ft_putchar(d3);
+					ft_putchar (d1);
+					ft_putchar (d2);
+					ft_putchar (d3);
 					if (!(d1 == 57 && d2 == 56 && d3 == 55))
-						ft_putchar(44);
-						ft_putchar(32);
+						ft_putchar(44);	
+					ft_putchar(32);
 					}
 				d3++;
 			}
 			d2++;
 		}
 		d1++;
-	}	
+	}
+	
+}
+
+int main()
+{
+    ft_print_comb();
+	return 0;
 }
