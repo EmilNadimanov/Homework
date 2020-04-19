@@ -41,9 +41,3 @@ void ft_print_comb2(void)
 		d1++;
 	}	
 }
-
-int main()
-{
-	ft_print_comb2();
-	return 0;
-}
