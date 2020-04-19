@@ -24,7 +24,7 @@ void ft_print_comb(void)
 					ft_putchar (d2);
 					ft_putchar (d3);
 					if (!(d1 == 57 && d2 == 56 && d3 == 55))
-						ft_putchar(44);	
+						ft_putchar(44);
 					ft_putchar(32);
 					}
 				d3++;
@@ -38,6 +38,6 @@ void ft_print_comb(void)
 
 int main()
 {
-    ft_print_comb();
+	ft_print_comb();
 	return 0;
 }

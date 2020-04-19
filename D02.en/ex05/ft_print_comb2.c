@@ -6,7 +6,7 @@ void ft_putchar(char c);
 
 void ft_print_comb2(void)
 {
-    int d1 = 48;
+	int d1 = 48;
 	int d2 = 48;
 	int d3 = 48;
 	int d4 = 48;
@@ -44,6 +44,6 @@ void ft_print_comb2(void)
 
 int main()
 {
-    ft_print_comb2();
+	ft_print_comb2();
 	return 0;
 }
