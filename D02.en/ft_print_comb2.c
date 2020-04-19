@@ -21,16 +21,15 @@ void ft_print_comb2(void)
 				d4 = 48;
 				while (d4 >= 48 && d4 <= 57)
 				{
-					if  (d1 < d3 || // всегда подойдёт, если во втором числе декада больше
-						(d1 == d3 && d2 < d4)) // если декада та же, но единицы больше - ок
+					if  (d1 < d3 || (d1 == d3 && d2 < d4)) 
 					{
 						ft_putchar(d1);
 						ft_putchar(d2);	
-						ft_putchar(32); //пробел
+						ft_putchar(32); 
 						ft_putchar(d3);
 						ft_putchar(d4);
-						ft_putchar(44); //запятая
-						ft_putchar(32); //пробел
+						ft_putchar(44); 
+						ft_putchar(32);
 					}
 					d4++;
 				}
@@ -40,10 +39,4 @@ void ft_print_comb2(void)
 		}
 		d1++;
 	}	
-}
-
-int main()
-{
-    ft_print_comb2();
-	return 0;
 }
