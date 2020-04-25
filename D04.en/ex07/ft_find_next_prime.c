@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 int ft_find_next_prime(int nb)
 {
@@ -20,12 +21,24 @@ int ft_find_next_prime(int nb)
             if (nextprime % check_divisor == 0)
             {
                 nextprime++;
+                check_divisor = 2;
                 continue;
             }
             check_divisor++;
         }
         if (check_divisor * check_divisor > nextprime)
+        {
+            printf ("%d", check_divisor);
             return nextprime;
+        }
         nextprime++;
     }
+}
+
+int main ()
+{
+    int nb;
+
+    nb = 8;
+    printf ("%d", ft_find_next_prime(nb));
 }
