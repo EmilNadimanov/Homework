@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h> //faaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 int ft_sqrt(int nb)
 {
@@ -11,7 +12,6 @@ int ft_sqrt(int nb)
         return 0;
     while (root * root != nb)
     {
-        printf("%d \t", root);
         root = (root + nb / root) / 2;
         if (check_loop == root - 1 || check_loop == root)
             return 0;

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 int ft_recursive_power(int nb, int power)
 {
@@ -7,6 +8,7 @@ int ft_recursive_power(int nb, int power)
 
     result = nb;
     if (power >= 0)
+    {
         if (power == 0)
             return 1;
         else
@@ -17,5 +19,6 @@ int ft_recursive_power(int nb, int power)
             else
                 return (int)result; 
         }
+    }
     return 0;
 }
