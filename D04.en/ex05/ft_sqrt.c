@@ -3,7 +3,7 @@
 
 int ft_sqrt(int nb)
 {
-    int root;
+    long long int root;
     int check_loop;
 
     root = 1;
@@ -14,5 +14,5 @@ int ft_sqrt(int nb)
             return 0;
         check_loop = root;
     }
-    return (nb % root == 0) ? root : 0;
+    return (nb % root == 0) ? (int)root : 0;
 }

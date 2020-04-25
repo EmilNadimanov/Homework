@@ -3,8 +3,19 @@
 
 int ft_recursive_factorial(int nb)
 {
-    if (nb >= 0)
-        return (nb == 0) ? 1 : nb * ft_recursive_factorial(nb - 1);
+    long long result;
+
+    result = nb;
+    if (result == 0 || result == 1)
+        return 1;
+    if (result > 1)
+    {
+        result *= ft_recursive_factorial(result - 1);
+        if (result > 2147483647)
+            return 0;
+        else
+            return (int)result;    
+    }
     else
         return 0;
 }

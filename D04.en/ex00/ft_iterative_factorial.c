@@ -3,17 +3,20 @@
 
 int ft_iterative_factorial(int nb)
 {
-    int result;
+    long long int result;
     
     result = nb;
-    if (nb == 0)
+    if (nb == 0 || nb == 1)
         return 1;
     else if (nb < 0)
         return 0;
     else
     {
         while (nb > 1)
-            result *= --nb;
-        return result;
+            result *= --nb;            
     }
+    if (result > 2147483647)
+        return 0;
+    else
+        return (int)result;
 }
