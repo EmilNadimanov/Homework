@@ -34,11 +34,3 @@ int ft_find_next_prime(int nb)
         nextprime++;
     }
 }
-
-int main ()
-{
-    int nb;
-
-    nb = 8;
-    printf ("%d", ft_find_next_prime(nb));
-}
