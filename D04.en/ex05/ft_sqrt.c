@@ -7,10 +7,13 @@ int ft_sqrt(int nb)
     int check_loop;
 
     root = 1;
+    if (nb == 0)
+        return 0;
     while (root * root != nb)
     {
+        printf("%d \t", root);
         root = (root + nb / root) / 2;
-        if (check_loop == root - 1)
+        if (check_loop == root - 1 || check_loop == root)
             return 0;
         check_loop = root;
     }
