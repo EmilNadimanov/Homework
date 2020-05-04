@@ -45,8 +45,9 @@ void ft_putnbr_base(int nbr, char *base)
         return;
     if (nbr < 0)
     {
+        if (nbr * -1 != nbr)
+            ft_putchar('-');
         nbr *= -1;
-        ft_putchar('-');        
     }
     if (nbr / getbase)
     {

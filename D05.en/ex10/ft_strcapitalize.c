@@ -3,23 +3,25 @@
 
 char *ft_strcapitalize(char *str)
 {
-    int ch;
-    int first_letter;
+    int c;
+    int first_char;
 
-    ch = 0;
-    first_letter = 1;
-    while (str[ch])
+    c = 0;
+    first_char = 1;
+    while (str[c])
     {
-        if ((str[ch] >= 65 && str[ch] <= 90) || (str[ch] >= 97 && str[ch] <= 122)
-            || (str[ch] >= 48 && str[ch] <= 57))
+        if ((str[c] >= 65 && str[c] <= 90) || (str[c] >= 97 && str[c] <= 122)
+            || (str[c] >= 48 && str[c] <= 57))
         {
-            if (str[ch] >= 97 && str[ch] <= 122 && first_letter)
-                str[ch] = str[ch] - 32;
-            first_letter = 0;
+            if (first_char)
+                str[c] = (str[c] >= 97 && str[c] <= 122) ? str[c] - 32 : str[c];
+            else
+                str[c] = (str[c] >= 65 && str[c] <= 90) ? str[c] + 32 : str[c];
+            first_char = 0;
         }
         else
-            first_letter = 1;
-        ch++;
+            first_char = 1;
+        c++;
     }
     return str;
 }

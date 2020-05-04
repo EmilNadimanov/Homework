@@ -1,28 +1,27 @@
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 int ft_atoi(char *str)
 {
     int number;
-    int counter;
+    int count;
     int if_negative;
 
     if_negative = 0;
     number = 0;
-    counter = 0;
-    while (str[counter] != '\0')
+    count = 0;
+    while (str[count] != '\0')
     {
-        if ((str[counter] >= '0' && str[counter] <= '9') 
-            || str[counter] == '-' || str[counter] == '+')
+        if ((str[count] >= '0' && str[count] <= '9')
+            || str[count] == '-' || str[count] == '+' || str [count] < 33)
         {   
-            if (str[counter] == '-' || str[counter] == '+')
+            if (str[count] == '-' || str[count] == '+' || str [count] < 33)
             {
-                if_negative = (str[counter] == '-') ? 1 : 0;
-                counter++;
+                if_negative = (str[count] == '-') ? 1 : 0;
+                count++;
             }
             else
-                number = number * 10 + (int)(str[counter++] - 48);
+                number = number * 10 + (int)(str[count++] - 48);
         }
         else
             return (if_negative) ? -number : number;

@@ -21,7 +21,7 @@ void ft_putnbr(int nb)
 				digit = nb + '0';
 			else 
 				digit = 48;
-				ft_putchar(digit);
+			ft_putchar(digit);
 		}
 	}
 	else

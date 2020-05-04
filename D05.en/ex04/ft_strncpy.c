@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 
 char *ft_strncpy(char *dest, char *src, unsigned int n)
 {
@@ -22,7 +20,7 @@ char *ft_strncpy(char *dest, char *src, unsigned int n)
         {
             while (n != 0)
                 *dest_copy++ = '\0';
-        }        
+        }
         n--;
     }
     return dest;

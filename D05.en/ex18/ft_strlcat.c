@@ -7,7 +7,6 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
     char *src_copy;
     int free_space;
     
-    free_space = size;
     dest_copy = dest;
     src_copy = src;
     while (*dest_copy)
@@ -17,11 +16,10 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
     {
         if (free_space > 0)
         {
-            *dest_copy = *src_copy;
+            *dest_copy++ = *src_copy;
             free_space--;
         }
         src_copy++;
-        dest_copy++;
     }
     if (free_space < 0)
         return size + src_copy - src;

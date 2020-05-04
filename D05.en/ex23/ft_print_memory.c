@@ -12,12 +12,11 @@
 • If size equals to 0, nothing should be displayed.
 */
 
-void ft_putchar(char c);
+void    ft_putchar(char c);
 
-void print_hex(int hex)
+void    print_hex(int hex)
 {
     char hexbase[17] = "0123456789abcdef";
-
     if (hex < 16)
     {
         ft_putchar (hexbase[hex]);
@@ -30,7 +29,7 @@ void print_hex(int hex)
     return;
 }
 
-void print_address(unsigned int lines, int size)
+void    print_address(unsigned int lines, int size)
 {
     int line_number;
     int address;
@@ -52,24 +51,24 @@ void print_address(unsigned int lines, int size)
     ft_putchar(' ');        
 }
 
-void print_numbers (char *addr_copy, int sizeleft)
+void    print_numbers(unsigned char *addr_copy, int sizeleft)
 {
-    int hex;
+    int pos;
     int count;
     int space;
     int shape;
 
     count = 16;
-    hex = 0;
+    pos = 0;
     space = 0;
-    shape = 41;
+    shape = 40;
     while (count-- && sizeleft--)
     {
-        if ((int)*(addr_copy + hex) < 16)
+        if ((int)*(addr_copy + pos) < 16)
             ft_putchar('0');
-        print_hex((int)*(addr_copy + hex));
+        print_hex((int)*(addr_copy + pos));
         shape -= 2;
-        hex++;
+        pos++;
         if (space++ == 1)
         {
             ft_putchar(' ');
@@ -81,25 +80,25 @@ void print_numbers (char *addr_copy, int sizeleft)
         ft_putchar(' ');
 }
 
-void print_text(char* addr_copy, int sizeleft)
+void    print_text(unsigned char* addr_copy, int sizeleft)
 {
     int count;
 
     count = -1;
     while (++count < 16 && sizeleft--)
     {
-        if ((int)*(addr_copy + count) < 32)
+        if (*(addr_copy + count) < 32 || *(addr_copy + count) > 127)
             ft_putchar('.');
         else
             ft_putchar(*(addr_copy + count));
     }
 }
 
-void *ft_print_memory(void *addr, unsigned int size)
+void    *ft_print_memory(void *addr, unsigned int size)
 {
     unsigned int lines;
     unsigned int chars;
-    char *addr_copy;
+    unsigned char *addr_copy;
 
     if (size == 0)
         return 0;

@@ -41,7 +41,6 @@ int checkstring(char *str, char *base)
     ch = 0;
     while (str[s])
     {
-        printf("Symbol %d is %c\n", s, str[s]);
         while (base[b])
         {
             if (str[s] == base [b++] || str[s] == '-' || str[s] == '+')

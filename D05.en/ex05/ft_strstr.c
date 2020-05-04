@@ -1,16 +1,16 @@
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
 char *ft_strstr(char *str, char *to_find)
 {
     int counter;
     int found;
 
-    counter = 0;
+    counter = -1;
     found = 0;
-    if (to_find[0] == '\0')
-        return str;
-    while (str[counter] != '\0')
+    while (str[++counter] != '\0')
     {
         if (str[counter] == to_find[0])
         {
@@ -27,7 +27,6 @@ char *ft_strstr(char *str, char *to_find)
             if (to_find[found] == '\0')
                 return str + counter;
         }
-        counter++;
     }
-    return '\0';
+    return (to_find[0] == '\0') ? str : "(null)";
 }
