@@ -24,5 +24,6 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
     if (free_space < 0)
         return size + src_copy - src;
     *dest_copy = '\0';
-    return (free_space > 0) ? dest_copy - dest : dest_copy - dest;
+    return (free_space > 0) ? dest_copy - dest :
+        dest_copy - dest + src_copy - src - 1;
 }
