@@ -87,7 +87,7 @@ void    print_text(unsigned char* addr_copy, int sizeleft)
     count = -1;
     while (++count < 16 && sizeleft--)
     {
-        if (*(addr_copy + count) < 32 || *(addr_copy + count) > 127)
+        if (*(addr_copy + count) < 32 || *(addr_copy + count) > 126)
             ft_putchar('.');
         else
             ft_putchar(*(addr_copy + count));
