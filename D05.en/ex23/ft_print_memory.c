@@ -1,16 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
-/* 
-• Create a function that displays the memory area onscreen.
-• The display of this memory area should be split into three columns :
-    ¶ The hexadecimal address of the first line’s first character ;
-    ¶ The content in hexadecimal ;
-    ¶ The content in printable characters.
-• If a character is non-printable, it’ll be replaced by a dot.
-• Each line should handle sixteen characters.
-• If size equals to 0, nothing should be displayed.
-*/
 
 void    ft_putchar(char c);
 
