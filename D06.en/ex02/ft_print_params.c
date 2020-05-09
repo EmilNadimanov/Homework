@@ -6,10 +6,10 @@ void ft_putchar(char c);
 int main(int argc, char **argv)
 {
     int i;
-    char *arg;
+	char *arg;
 
-    i = 1;
-    while (i < argc)
+	i = 1;
+	while (i < argc)
     {
         arg = argv[i++];
         while(*arg)

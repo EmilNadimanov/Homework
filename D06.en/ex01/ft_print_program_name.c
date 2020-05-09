@@ -7,7 +7,8 @@ int main(int argc, char **argv)
 {
     char *prog;
 
-    prog = *argv;
+    (void)argc;
+    prog = argv[0];
     while (*prog)
         ft_putchar(*prog++);
     ft_putchar('\n');

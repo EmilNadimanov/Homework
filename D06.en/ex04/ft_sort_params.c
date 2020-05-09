@@ -33,8 +33,7 @@ void   ft_sort_params(int argc, char **argv)
             }
             j++;
         }
-        i++;
-        j = i + 1;
+        j = i++ + 1;
     }
 }
 
