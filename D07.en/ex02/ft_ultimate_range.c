@@ -3,9 +3,9 @@
 
 int    ft_ultimate_range(int **range, int min, int max)
 {
-    int *numarr;
-    int i;
-
+    int     *numarr;
+    int     i;
+    
     if (min >= max)
     {
         *range = NULL;
@@ -13,6 +13,8 @@ int    ft_ultimate_range(int **range, int min, int max)
     }
     i = 0;
     numarr = malloc((max - min) * sizeof(int));
+	if (!numarr)
+		return NULL;
     while (i < max++ - min)
         numarr[i++] = min++;
     *range = numarr;
