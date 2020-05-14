@@ -55,7 +55,7 @@ int checkstring(char *str, char *base)
     return 0;
 }
 
-int mathpow (int number, int power)
+int mathpow(int number, int power)
 {
     int copy;
 
