@@ -1,5 +1,5 @@
-NAME := libft.a
 SHELL = /bin/sh
+NAME := libft.a
 CC := gcc
 HEADERS := $(wildcard includes/*.h)
 OPTS := -Wall -Wextra -Werror -c -I ${HEADERS}
@@ -15,7 +15,7 @@ ${NAME}:
 	gcc ${OPTS} ${SRCS}
 	ar rc ${NAME} ${OBJS}
 clean:
-	rm -f *.o *.a
+	rm -f *.o
 fclean:
 	rm -f ${NAME}
 re: fclean all
