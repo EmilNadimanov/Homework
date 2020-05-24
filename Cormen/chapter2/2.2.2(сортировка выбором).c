@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+
 int main(void)
 {
 	int A[10] = {5,6,4,7,3,8,1,2,9,0};
