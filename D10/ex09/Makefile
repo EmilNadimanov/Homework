@@ -1,6 +1,6 @@
 SHELL 	:= /bin/sh
 
-NAME 	:= do-op
+NAME 	:= advanced_do-op
 
 CC 		:= gcc
 

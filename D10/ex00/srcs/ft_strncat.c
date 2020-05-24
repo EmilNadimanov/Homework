@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-char *ft_strncat(char *dest, char *src, int nb)
+char 		*ft_strncat(char *dest, char *src, int nb)
 {
-    char *input;
+    char 	*input;
 
     input = dest;
     while (*input)

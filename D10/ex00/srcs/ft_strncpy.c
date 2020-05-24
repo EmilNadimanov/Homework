@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-char *ft_strncpy(char *dest, char *src, unsigned int n)
+char 		*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-    char *dest_copy;
-    char *src_copy;
+    char 	*dest_copy;
+    char 	*src_copy;
     
     dest_copy = dest;
     src_copy = src;

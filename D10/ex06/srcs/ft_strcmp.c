@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <unistd.h>
-
 int		ft_strcmp(char *s1, char *s2)
 {
 	while (*s1 == *s2++)
