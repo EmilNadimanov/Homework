@@ -1,15 +1,11 @@
 #include <stdlib.h>
 #include <unistd.h>
-
-int		strlength(char *str)
-{
-	int		i;
-
-	i = 0;
-	while (*str++)
-		i++;
-	return i;
-}
+/*
+Нестандартная функция языка программирования Си, создающая копию 
+указанной нуль-терминированной строки в куче (используя malloc) и 
+возвращающая указатель на неё. Чтобы освободить место, используемое 
+созданной копией, необходимо вызвать free.
+*/
 
 char	*ft_strdup(char *src)
 {
@@ -18,11 +14,13 @@ char	*ft_strdup(char *src)
 	int 	n;
 
 	n = -1;
-	i = strlength(src) + 1;
+	i = -1;
+	while (src[++i])
+		;
 	str = malloc(i * sizeof(char));
 	if (!str)
 		return NULL;
 	while (++n <= i)
-		str[n] = src[n];        
+		str[n] = src[n];
 	return str;
 }
