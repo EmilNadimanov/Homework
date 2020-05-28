@@ -6,9 +6,9 @@
 Create the function ft_list_last which returns the last element of the list.
 */
 
-t_list *ft_list_last(t_list *begin_list)
+t_list			*ft_list_last(t_list *begin_list)
 {
-	t_list *node;
+	t_list		*node;
 
 	if (!begin_list)
 		return NULL;

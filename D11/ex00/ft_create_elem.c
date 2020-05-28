@@ -7,9 +7,9 @@
 • It should assign data to the given argument and next to NULL.
 */
 
-t_list *ft_create_elem(void *data)
+t_list 			*ft_create_elem(void *data)
 {
-	t_list *tail_node;
+	t_list 		*tail_node;
 	tail_node = malloc(sizeof(t_list));
 	if (tail_node)
 	{

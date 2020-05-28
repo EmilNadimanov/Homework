@@ -8,7 +8,20 @@
 You may only use pointers related stuff.
 */
 
-void ft_list_reverse(t_list **begin_list)
+void			ft_list_reverse(t_list **begin_list)
 {
+	t_list		*a;
+	t_list		*b;
 
+	if (!*begin_list || !begin_list)
+		return NULL;
+	b = NULL;
+	while(a)
+	{
+		a = (*begin_list)->next
+		(*begin_list)->next = b;
+		b = *begin_list;
+		*begin_list = a;
+	}
+	*begin_list = b;
 }

@@ -7,7 +7,7 @@
 • In case of error, it should return a null pointer.
 */
 
-t_list *ft_list_at(t_list *begin_list, unsigned int nbr)
+t_list			*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
 	if (!begin_list || !*begin_list || nbr == 0)
 		return NULL;

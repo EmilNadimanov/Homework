@@ -9,9 +9,9 @@ to the beginning of the list.
 • If necessary, it’ll update the pointer at the beginning of the list.
 */
 
-t_list *ft_create_elem(void *data)
+t_list			*ft_create_elem(void *data)
 {
-	t_list *tail_node;
+	t_list		*tail_node;
 	tail_node = malloc(sizeof(t_list));
 	if (tail_node)
 	{
@@ -21,11 +21,11 @@ t_list *ft_create_elem(void *data)
 	return tail_node;
 }
 
-void ft_list_push_front(t_list **begin_list, void *data)
+void			ft_list_push_front(t_list **begin_list, void *data)
 {
-	t_list *node;
+	t_list		*node;
 
-	if (!*begin_list)
+	if (!*begin_list || !begin_list)
 		*begin_list = ft_create_elem(data);
 	else
 	{

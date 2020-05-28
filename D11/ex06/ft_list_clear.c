@@ -7,9 +7,9 @@
 • It’ll then assign the list’s pointer to null.
 */
 
-void ft_list_clear(t_list **begin_list)
+void			ft_list_clear(t_list **begin_list)
 {
-	t_list *pchelka;
+	t_list		*pchelka;
 	if (!begin_list || !*begin_list)
 		return ;
 	while(*begin_list)

@@ -7,9 +7,9 @@ Create the function ft_list_size which returns the number of elements in the
 list.
 */
 
-int ft_list_size(t_list *begin_list)
+int			ft_list_size(t_list *begin_list)
 {
-	int count;
+	int		count;
 
 	if (!begin_list)
 		return NULL;	
