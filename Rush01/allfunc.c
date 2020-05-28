@@ -27,6 +27,14 @@ int 			line_is_valid(char *str)
 	return 1;
 }
 
+int 			ft_strlen(char *str)
+{
+    int 		count = 0;
+    while (*(str + count) != '\0')
+        count++;
+    return count;
+}
+
 int				findrow(char **tab)
 {	
 	int			row;

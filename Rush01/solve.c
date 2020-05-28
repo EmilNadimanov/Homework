@@ -39,7 +39,7 @@ void 			check_sector(char **tab, int row, int square, int *possib)
 		while (sect2 < j)
 			{
 				if (tab[sect1][sect2] != '.')
-					possib[(int)tab[sect1][sect2] - 49] = 0;
+					possib[tab[sect1][sect2] - 49] = 0;
 				sect2++;
 			}
 		sect1++;
@@ -56,19 +56,20 @@ int				*all_possibilities(char **tab, int row, int square)
 	i = -1;
 	possib = malloc(sizeof(int) * 9);
 	if (!possib)
+	{
 		ft_putstr("\n Malloc failed!\n\n");
-	if (!possib)
 		return NULL;
+	}
 	while (++i < 9)
 		possib[i] = 1;
-	updown =  -1;
+	updown = -1;
 	while (++updown < 9)
 		if (tab[updown][square] != '.')
-			possib[(int)tab[updown][square] - 49] = 0;
+			possib[tab[updown][square] - 49] = 0;
 	leftright = -1;
 	while (++leftright < 9)
 		if (tab[row][leftright] != '.')
-			possib[(int)tab[row][leftright] - 49] = 0;
+			possib[tab[row][leftright] - 49] = 0;
 	check_sector(tab, row, square, possib);
 	return possib;
 }
@@ -79,7 +80,6 @@ int				sudoku(char **tab)
 	int			square;
 	int			num;
 	int 		*possib;
-	static int 	a = 0;
 	
 	row = findrow(tab);
 	square = findsquare(tab, row);
@@ -90,19 +90,16 @@ int				sudoku(char **tab)
 	while (++num < 9)
 		if (possib[num])
 		{
-			tab[row][square] = (char)(num + 49);
-			a++;
+			tab[row][square] = num + 49;
 			sudoku(tab);
 			if (is_complete(tab))
 				break;
-			a--;
 		}
 	free(possib);
 	if (is_complete(tab))
 		return 1;
 	tab[row][square] = '.';
-	if (a == 0)
-		return 0;
+	return 0;
 }
 
 int				main(int argc, char **argv)
@@ -114,7 +111,7 @@ int				main(int argc, char **argv)
 	while (i < argc - 1 || argc == 1)
 	{
 		i++;
-		if (argc < 10 || !line_is_valid(argv[i]) ||
+		if (argc != 10 || !line_is_valid(argv[i]) ||
 			ft_strlen(argv[i]) != 9)
 		{
 			ft_putstr("Input error\n");

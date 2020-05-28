@@ -7,5 +7,6 @@ int			line_is_valid(char *str);
 int			findrow(char **tab);
 int			findsquare(char **tab, int row);
 void		printtab(char **tab);
+int 		ft_strlen(char *str);
 
 #endif
