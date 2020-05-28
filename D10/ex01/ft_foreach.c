@@ -6,9 +6,9 @@ Create the function ft_foreach which, for a given ints array, applies a function
 all elements of the array. This function will be applied following the array’s order.
 */
 
-void 		ft_foreach(int *tab, int length, void(*f)(int))
+void		ft_foreach(int *tab, int length, void(*f)(int))
 {
-	int 	i;
+	int		i;
 
 	i = -1;
 	while (++i < length)

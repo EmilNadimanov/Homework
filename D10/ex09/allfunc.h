@@ -14,10 +14,10 @@ int				ft_mul(int a, int b);
 int				ft_div(int a, int b);
 int				ft_mod(int a, int b);
 int				ft_usage(int a, int b);
-typedef struct 	zhuk 
+typedef	struct	zhuk 
 {
-	char		oper[10];
+	char		*oper;
 	int			(*func)(int, int);
-} t_opp;
+} 				t_opp;
 #include "ft_opp.h"
 #endif

@@ -6,8 +6,6 @@ CC 		:= gcc
 
 FLAGS 	:=  -Wall -Wextra -Werror
 
-OBJS	:= ${wildcard ./*.o}
-
 SRCS 	:= ${wildcard srcs/*.c}
 
 .PHONY: clean, fclean, re
@@ -25,7 +23,7 @@ ${NAME}:
 clean:
 	@rm -f *.o
 
-fclean:
+fclean: clean
 	@rm -f ${NAME}
 
 libclean:
