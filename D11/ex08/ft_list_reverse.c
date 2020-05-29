@@ -14,11 +14,11 @@ void			ft_list_reverse(t_list **begin_list)
 	t_list		*b;
 
 	if (!*begin_list || !begin_list)
-		return NULL;
+		return;
 	b = NULL;
 	while(a)
 	{
-		a = (*begin_list)->next
+		a = (*begin_list)->next;
 		(*begin_list)->next = b;
 		b = *begin_list;
 		*begin_list = a;

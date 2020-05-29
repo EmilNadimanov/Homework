@@ -14,7 +14,7 @@ t_list 			*ft_create_elem(void *data)
 	if (tail_node)
 	{
 		tail_node->data = data;
-		tail_node->next = NULL;
+		tail_node->next = 0x0;
 	}
 	return tail_node;
 

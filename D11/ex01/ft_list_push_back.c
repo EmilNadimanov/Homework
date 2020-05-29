@@ -9,29 +9,19 @@ at the end of the list.
 • If necessary, it’ll update the pointer at the beginning of the list.
 */
 
-t_list			*ft_create_elem(void *data)
-{
-	t_list		*tail_node;
-	tail_node = malloc(sizeof(t_list));
-	if (tail_node)
-	{
-		tail_node->data = data;
-		tail_node->next = NULL;
-	}
-	return tail_node;
-}
+t_list			*ft_create_elem(void *data);
 
 void			ft_list_push_back(t_list **begin_list, void *data)
 {
 	t_list		*node;
 
 	node = *begin_list;
-	if (!node)
-		node == ft_create_elem(data);
+	if (!(*begin_list))
+		*begin_list = ft_create_elem(data);
 	else
 	{
 		while(node->next)
 			node = node->next;
-		node->next = ft_create_elem(data)
+		node->next = ft_create_elem(data);
 	}
 }
