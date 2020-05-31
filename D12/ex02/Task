@@ -1,0 +1,12 @@
+Allowed functions : close, open, read, write, malloc, free
+Remarks : n/a
+======================================================================================
+• Create a program called ft_tail which does the same thing as the system command
+tail, but which takes at least one file as argument.
+
+• The only option you have to handle is -c. This option will be present in all tests.
+
+• The submission directory should have a Makefile with the following rules : all,
+clean, fclean.
+
+• You may use the variable errno.
