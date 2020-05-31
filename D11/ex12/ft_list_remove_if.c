@@ -11,8 +11,8 @@ void			ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
 	t_list		*after;
 	t_list		*current;
-	
-	if(!*begin_list || !begin_list)
+
+	if (!*begin_list || !begin_list)
 		return;
 	while (!cmp((*begin_list)->data, data_ref))
 	{	
@@ -26,7 +26,7 @@ void			ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	while (current && current->next)
 	{
 		after = current->next;
-		if(!cmp(after->data, data_ref))
+		if (!cmp(after->data, data_ref))
 		{
 			current->next = after->next;
 			free(after);

@@ -10,13 +10,13 @@ command-line arguments.
 • The first link’s address in the list is returned.
 */
 
-t_list			*ft_create_elem(void *data);
+t_list	*ft_create_elem(void *data);
 
-t_list *ft_list_push_params(int ac, char **av)
+t_list	*ft_list_push_params(int ac, char **av)
 {
 	t_list *node;
 	t_list *tmp;
-	int i;
+	int 	i;
 
 	i = 0;
 	node = ft_create_elem(av[i]);

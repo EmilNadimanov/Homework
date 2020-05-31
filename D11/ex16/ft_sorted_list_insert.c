@@ -8,17 +8,7 @@
 inserts it into a list sorted so that it remains sortend in ascending order.
 */
 
-t_list			*ft_create_elem(void *data)
-{
-	t_list		*tail_node;
-	tail_node = malloc(sizeof(t_list));
-	if (tail_node)
-	{
-		tail_node->data = data;
-		tail_node->next = NULL;
-	}
-	return tail_node;
-}
+t_list			*ft_create_elem(void *data);
 
 void			ft_sorted_list_insert(t_list **begin_list, void *data,
 									  int (*cmp)())

@@ -1,7 +1,6 @@
 #include "ft_list.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 /*
 • Create the function ft_list_reverse which reverses the order of a list’s elements.
@@ -16,6 +15,7 @@ void			ft_list_reverse(t_list **begin_list)
 	if (!*begin_list || !begin_list)
 		return;
 	b = NULL;
+	a = *begin_list;
 	while(a)
 	{
 		a = (*begin_list)->next;

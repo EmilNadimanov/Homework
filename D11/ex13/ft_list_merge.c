@@ -9,9 +9,9 @@ end of an other list begin1.
 void ft_list_merge(t_list **begin_list1, t_list *begin_list2);
 */
 
-void				ft_list_merge(t_list **begin_list1, t_list *begin_list2)
+void		ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 {
-	t_list			*current;
+	t_list	*current;
 
 	if (!*begin_list1)
 		*begin_list1 = begin_list2;

@@ -14,8 +14,6 @@ t_list			*ft_list_last(t_list *begin_list)
 		return NULL;
 	node = begin_list;
 	while (node->next)
-	{
 		node = node->next;
-	}
 	return node;
 }
