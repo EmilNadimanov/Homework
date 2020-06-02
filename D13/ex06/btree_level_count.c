@@ -8,12 +8,12 @@ passed as argument.
 #include <unistd.h>
 #include <stdlib.h>
 
-int			btree_level_count(t_btree *root);
+int			btree_level_count(t_btree *root)
 {
-	int depth_l;
-	int depth_r;
-	int max;
-	t_btree *node;
+	int		depth_l;
+	int		depth_r;
+	int		max;
+	t_btree	*node;
 
 	if (!root)
 		return 0;

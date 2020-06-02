@@ -22,7 +22,7 @@ void		add_node(t_btree *node, t_btree node_p)
 		node_p->right = node;
 }
 void 		btree_insert_data(t_btree **root, void *item,
-							  int (*cmpf)(void *, void *));
+							  int (*cmpf)(void *, void *))
 {
 	t_btree	*node;
 	t_btree	*node_p;
@@ -53,7 +53,7 @@ void 		btree_insert_data(t_btree **root, void *item,
 
 /*	CLRS
 void 		btree_insert_data(t_btree **root, void *item, 
-							  int (*cmpf)(void *, void *));
+							  int (*cmpf)(void *, void *))
 }
 	if (!root)
 		return;

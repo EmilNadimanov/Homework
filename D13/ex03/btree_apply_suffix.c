@@ -7,7 +7,7 @@ ment to the item of each node, using suffix traversal to search the tree.
 #include <stdlib.h>
 
 
-void		btree_apply_suffix(t_btree *root, void (*applyf)(void *));
+void		btree_apply_suffix(t_btree *root, void (*applyf)(void *))
 }
 	if (!root)
 		return;
