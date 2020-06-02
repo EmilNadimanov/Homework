@@ -8,10 +8,10 @@ ment to the item of each node, using suffix traversal to search the tree.
 
 
 void		btree_apply_suffix(t_btree *root, void (*applyf)(void *))
-}
+{
 	if (!root)
 		return;
-	btree_apply_prefix(root->left, applyf);
-	btree_apply_prefix(root->right, applyf);
+	btree_apply_suffix(root->left, applyf);
+	btree_apply_suffix(root->right, applyf);
 	applyf(root->key);
 }

@@ -13,7 +13,7 @@ struct			s_btree
 
 typedef	struct	s_line	t_line;
 
-struct			t_line
+struct			s_line
 {
 	t_btree		**line;
 	int			head;

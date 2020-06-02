@@ -10,6 +10,7 @@ point to NULL.
 #include "ft_btree.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 t_btree		*btree_create_node(void *item);
 
@@ -22,7 +23,6 @@ void		add_node(t_btree *node, t_btree *node_p,
 	else
 		node_p->right = node;
 }
-
 void 		btree_insert_data(t_btree **root, void *item,
 							  int (*cmpf)(void *, void *))
 {

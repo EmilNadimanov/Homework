@@ -10,10 +10,10 @@ to the item of each node, using infix traversal to search the tree.
 #include <stdlib.h>
 
 void 		btree_apply_infix(t_btree *root, void (*applyf)(void *))
-}
+{
 	if (!root)
 		return;
-	btree_apply_prefix(root->left, applyf);
+	btree_apply_infix(root->left, applyf);
 	applyf(root->key);
-	btree_apply_prefix(root->right, applyf);
+	btree_apply_infix(root->right, applyf);
 }
