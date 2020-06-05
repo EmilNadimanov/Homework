@@ -19,4 +19,5 @@ t_btree		*btree_create_node(void *item)
 	node->left = 0;
 	node->right = 0;
 	node->parent = 0;
+	return node;
 }

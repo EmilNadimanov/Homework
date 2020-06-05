@@ -2,6 +2,7 @@
 # define __FT_BTREE_H__
 
 typedef	struct	s_btree	t_btree;
+typedef	struct	s_line	t_line;
 
 struct			s_btree
 {
@@ -11,9 +12,7 @@ struct			s_btree
 	void		*key;
 };
 
-typedef	struct	s_line	t_line;
-
-struct			t_line
+struct			s_line
 {
 	t_btree		**line;
 	int			head;

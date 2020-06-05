@@ -14,57 +14,73 @@ function called will take three arguments :
 #include "ft_btree.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-int			count_bottom_nodes(t_btree *root)
+int			btree_level_count(t_btree *root)
 {
-	int bot_nodes;
+	int		depth_l;
+	int		depth_r;
+	int		max;
+	t_btree	*node;
 
 	if (!root)
 		return 0;
-	bot_nodes = 0;
-	bot_nodes += count_bottom_nodes(root->left);
-	bot_nodes += count_bottom_nodes(root->right);
+	depth_l = 0;
+	depth_l = btree_level_count(root->left);
+	depth_r = btree_level_count(root->right);
 	if (!root->left && !root->right)
-		bot_nodes++;
-	return bot_nodes;
+	{
+		node = root;
+		max = 0;
+		while(node)
+		{
+			node = node->parent;
+			max++;
+		}
+		return max;
+	}
+	else
+		return max = (depth_l > depth_r) ? depth_l : depth_r;
 }
 
 void		enqueue(t_line *q, t_btree *node)
 {
-	if (q->tail == q->head || !node)
+	if (!node)
 		return;
 	q->line[q->tail] = node;
-	if (q->tail == q->length - 1)
-		q->tail == 0;
+	if (q->tail == q->length)
+		q->tail = 0;
 	else q->tail = q->tail + 1;
 }
 
-void		dequeue(t_line *q)
+t_btree *	dequeue(t_line *q)
 {
 	t_btree *node;
-
-	if (q->head == q->tail)
-		return;
+	
 	node = q->line[q->head];
 	q->line[q->head] = NULL;
-	if (q->head == q->length - 1)
-		q->head == 0;
-	else q->head = q->head + 1;
+	if (q->head == q->length)
+		q->head = 0;
+	else 
+		q->head = q->head + 1;
+	return node;
 }
 
 int			get_param(t_btree *node, int flag)
 {
-	if (!flag)
+	int is_first;
+	int level;
+	
+	if (flag)
 	{
-		int level;
-
-		level = 1;
+		level = 0;
 		while (node->parent)
+		{
 			level++;
+			node = node->parent;
+		}
 		return level;
 	}
-	int is_first;
-
 	is_first = 1;
 	while (is_first && node->parent)
 	{
@@ -79,28 +95,33 @@ int			get_param(t_btree *node, int flag)
 void		btree_apply_by_level(t_btree *root, void (*applyf)(void *item,
 						 		 int current_level, int is_first_elem))
 {
-	int		save;
 	t_line	*q;
-	t_btree	node;
+	t_btree	*node;
+	int		height;
 
 	if (!root)
 		return;
-	levels = btree_level_count;
-	q->length = count_bottom_nodes(root);
-	q->line = malloc(sizeof(t_btree *) * q->length);
+	q = malloc(sizeof(t_line));
+	if (!q)
+		return;
+	height = btree_level_count(root) - 1;
+	q->length = 1;
+	while (height--)
+		q->length = 2 * q->length;
+	q->line = malloc(sizeof(t_btree *) * q->length + 1);
+	if (!q->line)
+		return;
 	q->head = 0;
 	q->tail = q->head;
 	enqueue(q, root);
-	while (		)
+	while (q->tail != q->head)
 	{
-		q->is_first = 1;
-		while ()
-		{
-			node = dequeue(q);
-			applyf(node->key, get_param(node, 0), get_param(node, 1);
-			q->is_first = 0;
-			enqueue(q, node->left);
-			enqueue(q, node->right);
-		}
+		node = dequeue(q);
+		if (node)
+			applyf(node->key, get_param(node, 1), get_param(node, 0));
+		enqueue(q, node->left);
+		enqueue(q, node->right);
 	}
+	free(q->line);
+	free(q);
 }

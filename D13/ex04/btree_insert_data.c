@@ -31,11 +31,6 @@ void 		btree_insert_data(t_btree **root, void *item,
 
 	if (!root)
 		return;
-	else if (!*root)
-	{
-		*root = btree_create_node(item);
-		return;
-	}
 	node = *root;
 	while (node)
 	{
@@ -48,9 +43,10 @@ void 		btree_insert_data(t_btree **root, void *item,
 		{
 			node = btree_create_node(item);
 			add_node(node, node_p, cmpf);
-			break;
+			return;
 		}
 	}
+	*root = btree_create_node(item);
 }
 
 /*	CLRS

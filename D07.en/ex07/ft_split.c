@@ -11,8 +11,6 @@ to indicate the end of the array.
 • There cannot be any empty strings in your array. Draw your conclusions accord-
 ingly.
 • The string given as argument won’t be modifiable
-То есть есть str, в котором нормальные строки разделены символами из charset.
- Надо создать массив строк, где каждый 
 */
 int	is_separator(char c, char *charset)
 {
